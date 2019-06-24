@@ -12,10 +12,10 @@ class Show < ActiveRecord::Base
   end
 
   def self.least_popular_show
-    Show.where(rating).last
+    Show.where("rating").last
   end
 
-  def ratings_sum
+  def self.ratings_sum
     Show.sum(:rating)
   end
 
